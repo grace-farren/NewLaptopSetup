@@ -18,6 +18,7 @@ Branch types
 - Feature: Each new feature is developed in its own feature branch, created from develop branch. Name descriptively, following 'feature/<feature-name>. Once feature is complete and tested, it is merged back into develop branch.
 
 ## Prerequisites
+- Github account 
 
 ## Installation
 

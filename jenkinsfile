@@ -1,14 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('hello') {
-            steps {
-                sh 'cat test.txt'
-            }
-        }
-        stage('installjdk') {
+        stage('install jdk') {
             steps {
                 sh './install_jdk.sh'
+            }
+        }
+        stage('install maven') {
+            steps {
+                sh './install_maven.sh'
             }
         }
     }

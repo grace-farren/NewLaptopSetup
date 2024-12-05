@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                chmod +x install_jdk.sh
+                chmod +x install_maven.sh
+
+                ./install_jdk.sh
+                ./install_maven.sh
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                chmod +x test_install_jdk.sh
+                ./test_install_maven.sh
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                // Add deployment commands here
+            }
+        }
+    }
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed.'
+        }
+    }
+}

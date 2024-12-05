@@ -1,16 +1,15 @@
 pipeline {
     agent any
-    stages {      
+    stages {
         stage('hello') {
             steps {
-               sh 'cat test.txt'
+                sh 'cat text.txt'
             }
         }
-
-        stage('install jdk') {
+        stage('installjdk') {
             steps {
-                cd scripts
-                ./install_jdk.sh
+                sh 'cd scripts'
+                sh './install_jdk.sh'
             }
         }
     }

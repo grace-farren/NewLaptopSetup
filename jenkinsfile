@@ -9,6 +9,7 @@ pipeline {
         stage('installjdk') {
             steps {
                 sh 'cd scripts'
+                sh 'ls'
                 sh './install_jdk.sh'
             }
         }

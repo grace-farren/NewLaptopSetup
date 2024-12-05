@@ -1,38 +1,10 @@
 pipeline {
     agent any
-    stages {
-        stage('Build') {
+    stages {      
+        stage('hello') {
             steps {
-                echo 'Building...'
-                cd scripts
-                chmod +x install_jdk.sh
-                chmod +x install_maven.sh
-                ./install_jdk.sh
-                ./install_maven.sh
+               sh 'cat test.txt'
             }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                cd ..
-                cd tests
-                chmod +x test_install_jdk.sh
-                ./test_install_maven.sh
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-                // Add deployment commands here
-            }
-        }
-    }
-    post {
-        success {
-            echo 'Pipeline completed successfully!'
-        }
-        failure {
-            echo 'Pipeline failed.'
         }
     }
 }

@@ -6,5 +6,11 @@ pipeline {
                sh 'cat test.txt'
             }
         }
+        stage('install jdk') {
+            steps {
+                cd scripts
+                ./install_jdk.sh
+            }
+        }
     }
 }

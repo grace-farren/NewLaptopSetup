@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('install jdk') {
+            steps {
+                sh './install_jdk.sh'
+            }
+        }
+        stage('install maven') {
+            steps {
+                sh './install_maven.sh'
+            }
+        }
+    }
+}
